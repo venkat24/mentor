@@ -18,6 +18,7 @@ def menteeCleaner(fileName):
             tempDict["mobile"] = row[9]
             dictmentees.append(tempDict)
         with open('mentees_raw_data_sample.json', 'w') as outfile:
+            dictmentees = sorted(dictmentees, key=lambda student: student["dept"])
             json.dump(dictmentees, outfile)
     except IOError:
         print("File could not be found.")
