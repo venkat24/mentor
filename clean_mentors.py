@@ -21,6 +21,6 @@ def mentorCleaner(fileName):
     except IOError:
         print("File could not be found.")
         sys.exit()
-if __name__=="__main__":    
-    mentorFileName = "mentors_raw_data.csv"
+if __name__=="__main__":
+    mentorFileName = sys.argv[1]
     mentorCleaner(mentorFileName)
